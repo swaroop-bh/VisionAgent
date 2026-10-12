@@ -1,0 +1,70 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply bg-obsidian-950 text-ivory-200 antialiased font-sans select-none overflow-x-hidden;
+    background-color: #07080a;
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+}
+
+/* Glass & Glow utilities */
+.glass-panel {
+  background: rgba(16, 19, 27, 0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.card-slate {
+  background: #11141d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-slate:hover {
+  background: #151924;
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.gold-pill-active {
+  background: linear-gradient(90deg, #f0e6d2 0%, #faefe0 100%);
+  color: #111318;
+  box-shadow: 0 0 20px rgba(240, 230, 210, 0.25);
+}
+
+.gold-subtle-glow {
+  box-shadow: 0 0 30px -5px rgba(212, 175, 55, 0.18);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
